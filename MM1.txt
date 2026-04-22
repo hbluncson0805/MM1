@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Page Rotator</title>
+</head>
+<body>
+<script>
+  const pages = [
+    "https://app.machinemetrics.com/app/reports/builder?id=20757",
+    "https://app.machinemetrics.com/dashboards/live/utilization?group=3158d550-2310-4f9b-8c64-59802d544a8e"
+  ];
+
+  let index = 0;
+
+  setInterval(() => {
+    window.location.href = pages[index];
+    index = (index + 1) % pages.length;
+  }, 30000); // 30 seconds
+</script>
+</body>
+</html>
+``
