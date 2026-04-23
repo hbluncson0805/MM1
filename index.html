@@ -2,9 +2,25 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Page Rotator</title>
+  <title>MM1 Rotator</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-size: 28px;
+    }
+  </style>
 </head>
 <body>
+
+<div>Loading dashboard…</div>
+
 <script>
   const pages = [
     "https://app.machinemetrics.com/app/reports/builder?id=20757",
@@ -13,11 +29,14 @@
 
   let index = 0;
 
-  setInterval(() => {
-    window.location.href = pages[index];
-    index = (index + 1) % pages.length;
-  }, 30000); // 30 seconds
+  // Start rotation after page renders
+  setTimeout(() => {
+    setInterval(() => {
+      window.location.href = pages[index];
+      index = (index + 1) % pages.length;
+    }, 45000); // 45 seconds
+  }, 2000);
 </script>
+
 </body>
 </html>
-``
